@@ -6,6 +6,7 @@ public class Feladat {
 
     public static int ideiEv = 2026;
     public static int nyugdijKorhatar = 65;
+    public static final Random RND = new Random();
 
     public static void main(String[] args) {
         feladat();
@@ -45,8 +46,7 @@ public class Feladat {
     }
 
     private static int veletlenIndex(int max) {
-        Random random = new Random();
-        return random.nextInt(max);
+        return RND.nextInt(max);
     }
 
     private static int eletkor(int szulEv) {
