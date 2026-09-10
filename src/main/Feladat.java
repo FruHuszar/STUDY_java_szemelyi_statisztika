@@ -35,7 +35,7 @@ public class Feladat {
 
     private static void koszontes(String nev, boolean veletlen) {
         String megszolitás = veletlen ? veletlenKoszontes() : "Üdv";
-        System.out.println(megszolitás + ", " + nev + "!");
+        System.out.println(megszolitás + ", " + nev + "!"); //jobb lenne a procedurlis megoldás: az elsőt választja ki az üdv helyett ha nincs keverés
     }
 
     private static String veletlenKoszontes() {
