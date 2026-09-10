@@ -1,13 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main;
 
-/**
- *
- * @author huszar.fruzsina
- */
 public class Szemely {
-    
+    private String nev;
+    private int szulEv;
+
+    public Szemely(String nev, int szulEv) {
+        this.nev = nev;
+        this.szulEv = szulEv;
+    }
+
+    public String getNev() {
+        return nev;
+    }
+
+    public void setNev(String nev) {
+        this.nev = nev;
+    }
+
+    public int getSzulEv() {
+        return szulEv;
+    }
+
+    public void setSzulEv(int szulEv) {
+        this.szulEv = szulEv;
+    }
 }
