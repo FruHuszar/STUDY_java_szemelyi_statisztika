@@ -21,7 +21,7 @@ public class Feladat {
 
         ellenorzes(szulEv);
 
-        koszontes();
+        koszontes(nev);
 
         String adat = "Név: %s".formatted(nev);
         adat += "\nÉletkor (%d-ban): %d év".formatted(ideiEv, kor);
@@ -30,17 +30,16 @@ public class Feladat {
     }
 
     private static void koszontes(String nev) {
-        System.out.println("Üdv, " + nev + "!");
+        koszontes(nev, true);
     }
 
-    // Túlterhelt metódus paraméter nélkül
-    private static void koszontes() {
-        String koszones = veletlenKoszontes();
-        System.out.println(koszones);
+    private static void koszontes(String nev, boolean veletlen) {
+        String megszolitás = veletlen ? veletlenKoszontes() : "Üdv";
+        System.out.println(megszolitás + ", " + nev + "!");
     }
 
     private static String veletlenKoszontes() {
-        String[] koszontesek = {"Szius!", "Hello!", "Hi!"};
+        String[] koszontesek = {"Szius", "Hello", "Hi"};
         int index = veletlenIndex(koszontesek.length);
         return koszontesek[index];
     }
