@@ -49,6 +49,6 @@ public class Feladat {
     }
 
     private static boolean helyesSzulEvE(int szulEv) {
-        return szulEv > 1900 && szulEv <= 2026;
+        return szulEv > 1900 && szulEv <= ideiEv;
     }
 }
