@@ -1,9 +1,12 @@
 package main;
 
+import java.util.Random;
+
 public class Feladat {
 
     public static int ideiEv = 2026;
     public static int nyugdijKorhatar = 65;
+
     public static void main(String[] args) {
         feladat();
     }
@@ -11,13 +14,13 @@ public class Feladat {
     private static void feladat() {
         String nev = "Fru";
         int szulEv = 2003;
-        
+
         int kor = eletkor(szulEv);
         int nyugdijEv = nyugdijEve(szulEv);
 
         ellenorzes(szulEv);
-        
-        koszontes(nev);
+
+        koszontes();
 
         String adat = "Név: %s".formatted(nev);
         adat += "\nÉletkor (%d-ban): %d év".formatted(ideiEv, kor);
@@ -26,7 +29,24 @@ public class Feladat {
     }
 
     private static void koszontes(String nev) {
-        System.out.println("Szius, " + nev + "!");
+        System.out.println("Üdv, " + nev + "!");
+    }
+
+    // Túlterhelt metódus paraméter nélkül
+    private static void koszontes() {
+        String koszones = veletlenKoszontes();
+        System.out.println(koszones);
+    }
+
+    private static String veletlenKoszontes() {
+        String[] koszontesek = {"Szius!", "Hello!", "Hi!"};
+        int index = veletlenIndex(koszontesek.length);
+        return koszontesek[index];
+    }
+
+    private static int veletlenIndex(int max) {
+        Random random = new Random();
+        return random.nextInt(max);
     }
 
     private static int eletkor(int szulEv) {
@@ -46,7 +66,7 @@ public class Feladat {
             System.err.println("Hiba: A születési év nem lehet a jövőben vagy reálisan túl régen!");
             throw new IllegalArgumentException("Érvénytelen születési év.");
         }
-    }
+    } 
 
     private static boolean helyesSzulEvE(int szulEv) {
         return szulEv > 1900 && szulEv <= ideiEv;
